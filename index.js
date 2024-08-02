@@ -2,8 +2,9 @@
 const inquirer = require("inquirer")
 const fs = require('fs');
 const path = require('path');
-const { gatherInfo, Shape, Circle, Square, Triangle  } = require("./lib/shapes");
+const { gatherInfo, Circle, Square, Triangle  } = require("./lib/shapes");
 
+// Function to prompt user questions and build the svg based on answers
 async function createSvg(){
     try {
         const response = await inquirer.prompt(gatherInfo());   
