@@ -1,6 +1,7 @@
 
 const inquirer = require("inquirer")
 const fs = require('fs');
+const path = require('path');
 const { gatherInfo, Shape, Circle, Square, Triangle  } = require("./lib/shapes");
 
 async function createSvg(){
@@ -18,7 +19,7 @@ async function createSvg(){
         }
         if (shape){
             const newSvg = shape.render();
-            fs.writeFile("logo.svg", newSvg, function(err){
+            fs.writeFile(path.join(__dirname, './examples', "logo.svg"), newSvg, function(err){
                 if(err) console.log(err)
             })
         }
